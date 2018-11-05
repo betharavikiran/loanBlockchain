@@ -227,14 +227,14 @@
     "absolutePath": "/home/speak2ravi/Documents/develop/karmaBlockChain/contracts/KarmaDatabaseModel.sol",
     "exportedSymbols": {
       "KarmaDatabaseModel": [
-        460
+        461
       ]
     },
-    "id": 461,
+    "id": 462,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 417,
+        "id": 418,
         "literals": [
           "solidity",
           "^",
@@ -247,9 +247,9 @@
       {
         "absolutePath": "/home/speak2ravi/Documents/develop/karmaBlockChain/contracts/KarmaConstants.sol",
         "file": "./KarmaConstants.sol",
-        "id": 418,
+        "id": 419,
         "nodeType": "ImportDirective",
-        "scope": 461,
+        "scope": 462,
         "sourceUnit": 101,
         "src": "26:30:3",
         "symbolAliases": [],
@@ -261,7 +261,7 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 419,
+              "id": 420,
               "name": "KarmaConstants",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 100,
@@ -271,7 +271,7 @@
                 "typeString": "contract KarmaConstants"
               }
             },
-            "id": 420,
+            "id": 421,
             "nodeType": "InheritanceSpecifier",
             "src": "89:14:3"
           }
@@ -282,9 +282,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 460,
+        "id": 461,
         "linearizedBaseContracts": [
-          460,
+          461,
           100
         ],
         "name": "KarmaDatabaseModel",
@@ -292,14 +292,14 @@
         "nodes": [
           {
             "canonicalName": "KarmaDatabaseModel.ServiceProvider",
-            "id": 429,
+            "id": 430,
             "members": [
               {
                 "constant": false,
-                "id": 422,
+                "id": 423,
                 "name": "providerAddress",
                 "nodeType": "VariableDeclaration",
-                "scope": 429,
+                "scope": 430,
                 "src": "143:23:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -308,7 +308,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 421,
+                  "id": 422,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "143:7:3",
@@ -322,10 +322,10 @@
               },
               {
                 "constant": false,
-                "id": 424,
+                "id": 425,
                 "name": "name",
                 "nodeType": "VariableDeclaration",
-                "scope": 429,
+                "scope": 430,
                 "src": "176:12:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -334,7 +334,7 @@
                   "typeString": "bytes32"
                 },
                 "typeName": {
-                  "id": 423,
+                  "id": 424,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
                   "src": "176:7:3",
@@ -348,10 +348,10 @@
               },
               {
                 "constant": false,
-                "id": 426,
+                "id": 427,
                 "name": "category",
                 "nodeType": "VariableDeclaration",
-                "scope": 429,
+                "scope": 430,
                 "src": "198:17:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -361,7 +361,7 @@
                 },
                 "typeName": {
                   "contractScope": null,
-                  "id": 425,
+                  "id": 426,
                   "name": "Category",
                   "nodeType": "UserDefinedTypeName",
                   "referencedDeclaration": 18,
@@ -376,10 +376,10 @@
               },
               {
                 "constant": false,
-                "id": 428,
+                "id": 429,
                 "name": "serviceProviderId",
                 "nodeType": "VariableDeclaration",
-                "scope": 429,
+                "scope": 430,
                 "src": "225:25:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -388,7 +388,7 @@
                   "typeString": "bytes32"
                 },
                 "typeName": {
-                  "id": 427,
+                  "id": 428,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
                   "src": "225:7:3",
@@ -403,20 +403,20 @@
             ],
             "name": "ServiceProvider",
             "nodeType": "StructDefinition",
-            "scope": 460,
+            "scope": 461,
             "src": "110:147:3",
             "visibility": "public"
           },
           {
             "canonicalName": "KarmaDatabaseModel.Loan",
-            "id": 454,
+            "id": 455,
             "members": [
               {
                 "constant": false,
-                "id": 431,
+                "id": 432,
                 "name": "loanId",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "285:11:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -425,7 +425,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 430,
+                  "id": 431,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "285:4:3",
@@ -439,10 +439,10 @@
               },
               {
                 "constant": false,
-                "id": 433,
+                "id": 434,
                 "name": "category",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "307:17:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -452,7 +452,7 @@
                 },
                 "typeName": {
                   "contractScope": null,
-                  "id": 432,
+                  "id": 433,
                   "name": "Category",
                   "nodeType": "UserDefinedTypeName",
                   "referencedDeclaration": 18,
@@ -467,10 +467,10 @@
               },
               {
                 "constant": false,
-                "id": 435,
+                "id": 436,
                 "name": "principal",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "335:14:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -479,7 +479,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 434,
+                  "id": 435,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "335:4:3",
@@ -493,10 +493,10 @@
               },
               {
                 "constant": false,
-                "id": 437,
+                "id": 438,
                 "name": "currency",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "360:17:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -506,7 +506,7 @@
                 },
                 "typeName": {
                   "contractScope": null,
-                  "id": 436,
+                  "id": 437,
                   "name": "Currency",
                   "nodeType": "UserDefinedTypeName",
                   "referencedDeclaration": 7,
@@ -521,10 +521,10 @@
               },
               {
                 "constant": false,
-                "id": 439,
+                "id": 440,
                 "name": "rateOfInterest",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "388:19:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -533,7 +533,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 438,
+                  "id": 439,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "388:4:3",
@@ -547,10 +547,10 @@
               },
               {
                 "constant": false,
-                "id": 441,
+                "id": 442,
                 "name": "approvedRate",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "418:17:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -559,7 +559,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 440,
+                  "id": 441,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "418:4:3",
@@ -573,10 +573,10 @@
               },
               {
                 "constant": false,
-                "id": 443,
+                "id": 444,
                 "name": "incentiveRate",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "446:18:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -585,7 +585,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 442,
+                  "id": 443,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "446:4:3",
@@ -599,10 +599,10 @@
               },
               {
                 "constant": false,
-                "id": 445,
+                "id": 446,
                 "name": "tenure",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "475:11:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -611,7 +611,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 444,
+                  "id": 445,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "475:4:3",
@@ -625,10 +625,10 @@
               },
               {
                 "constant": false,
-                "id": 447,
+                "id": 448,
                 "name": "borrowerExternalId",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "497:26:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -637,7 +637,7 @@
                   "typeString": "bytes32"
                 },
                 "typeName": {
-                  "id": 446,
+                  "id": 447,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
                   "src": "497:7:3",
@@ -651,10 +651,10 @@
               },
               {
                 "constant": false,
-                "id": 449,
+                "id": 450,
                 "name": "investorExternalId",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "533:26:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -663,7 +663,7 @@
                   "typeString": "bytes32"
                 },
                 "typeName": {
-                  "id": 448,
+                  "id": 449,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
                   "src": "533:7:3",
@@ -677,10 +677,10 @@
               },
               {
                 "constant": false,
-                "id": 451,
+                "id": 452,
                 "name": "serviceProviderId",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "569:25:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -689,7 +689,7 @@
                   "typeString": "bytes32"
                 },
                 "typeName": {
-                  "id": 450,
+                  "id": 451,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
                   "src": "569:7:3",
@@ -703,10 +703,10 @@
               },
               {
                 "constant": false,
-                "id": 453,
+                "id": 454,
                 "name": "status",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "605:13:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -716,7 +716,7 @@
                 },
                 "typeName": {
                   "contractScope": null,
-                  "id": 452,
+                  "id": 453,
                   "name": "Status",
                   "nodeType": "UserDefinedTypeName",
                   "referencedDeclaration": 14,
@@ -732,20 +732,20 @@
             ],
             "name": "Loan",
             "nodeType": "StructDefinition",
-            "scope": 460,
+            "scope": 461,
             "src": "263:362:3",
             "visibility": "public"
           },
           {
             "canonicalName": "KarmaDatabaseModel.Customer",
-            "id": 459,
+            "id": 460,
             "members": [
               {
                 "constant": false,
-                "id": 456,
+                "id": 457,
                 "name": "customerExternalId",
                 "nodeType": "VariableDeclaration",
-                "scope": 459,
+                "scope": 460,
                 "src": "657:26:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -754,7 +754,7 @@
                   "typeString": "bytes32"
                 },
                 "typeName": {
-                  "id": 455,
+                  "id": 456,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
                   "src": "657:7:3",
@@ -768,10 +768,10 @@
               },
               {
                 "constant": false,
-                "id": 458,
+                "id": 459,
                 "name": "customerType",
                 "nodeType": "VariableDeclaration",
-                "scope": 459,
+                "scope": 460,
                 "src": "693:25:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -781,7 +781,7 @@
                 },
                 "typeName": {
                   "contractScope": null,
-                  "id": 457,
+                  "id": 458,
                   "name": "CustomerType",
                   "nodeType": "UserDefinedTypeName",
                   "referencedDeclaration": 21,
@@ -797,12 +797,12 @@
             ],
             "name": "Customer",
             "nodeType": "StructDefinition",
-            "scope": 460,
+            "scope": 461,
             "src": "631:94:3",
             "visibility": "public"
           }
         ],
-        "scope": 461,
+        "scope": 462,
         "src": "58:669:3"
       }
     ],
@@ -812,14 +812,14 @@
     "absolutePath": "/home/speak2ravi/Documents/develop/karmaBlockChain/contracts/KarmaDatabaseModel.sol",
     "exportedSymbols": {
       "KarmaDatabaseModel": [
-        460
+        461
       ]
     },
-    "id": 461,
+    "id": 462,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 417,
+        "id": 418,
         "literals": [
           "solidity",
           "^",
@@ -832,9 +832,9 @@
       {
         "absolutePath": "/home/speak2ravi/Documents/develop/karmaBlockChain/contracts/KarmaConstants.sol",
         "file": "./KarmaConstants.sol",
-        "id": 418,
+        "id": 419,
         "nodeType": "ImportDirective",
-        "scope": 461,
+        "scope": 462,
         "sourceUnit": 101,
         "src": "26:30:3",
         "symbolAliases": [],
@@ -846,7 +846,7 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 419,
+              "id": 420,
               "name": "KarmaConstants",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 100,
@@ -856,7 +856,7 @@
                 "typeString": "contract KarmaConstants"
               }
             },
-            "id": 420,
+            "id": 421,
             "nodeType": "InheritanceSpecifier",
             "src": "89:14:3"
           }
@@ -867,9 +867,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 460,
+        "id": 461,
         "linearizedBaseContracts": [
-          460,
+          461,
           100
         ],
         "name": "KarmaDatabaseModel",
@@ -877,14 +877,14 @@
         "nodes": [
           {
             "canonicalName": "KarmaDatabaseModel.ServiceProvider",
-            "id": 429,
+            "id": 430,
             "members": [
               {
                 "constant": false,
-                "id": 422,
+                "id": 423,
                 "name": "providerAddress",
                 "nodeType": "VariableDeclaration",
-                "scope": 429,
+                "scope": 430,
                 "src": "143:23:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -893,7 +893,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 421,
+                  "id": 422,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "143:7:3",
@@ -907,10 +907,10 @@
               },
               {
                 "constant": false,
-                "id": 424,
+                "id": 425,
                 "name": "name",
                 "nodeType": "VariableDeclaration",
-                "scope": 429,
+                "scope": 430,
                 "src": "176:12:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -919,7 +919,7 @@
                   "typeString": "bytes32"
                 },
                 "typeName": {
-                  "id": 423,
+                  "id": 424,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
                   "src": "176:7:3",
@@ -933,10 +933,10 @@
               },
               {
                 "constant": false,
-                "id": 426,
+                "id": 427,
                 "name": "category",
                 "nodeType": "VariableDeclaration",
-                "scope": 429,
+                "scope": 430,
                 "src": "198:17:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -946,7 +946,7 @@
                 },
                 "typeName": {
                   "contractScope": null,
-                  "id": 425,
+                  "id": 426,
                   "name": "Category",
                   "nodeType": "UserDefinedTypeName",
                   "referencedDeclaration": 18,
@@ -961,10 +961,10 @@
               },
               {
                 "constant": false,
-                "id": 428,
+                "id": 429,
                 "name": "serviceProviderId",
                 "nodeType": "VariableDeclaration",
-                "scope": 429,
+                "scope": 430,
                 "src": "225:25:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -973,7 +973,7 @@
                   "typeString": "bytes32"
                 },
                 "typeName": {
-                  "id": 427,
+                  "id": 428,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
                   "src": "225:7:3",
@@ -988,20 +988,20 @@
             ],
             "name": "ServiceProvider",
             "nodeType": "StructDefinition",
-            "scope": 460,
+            "scope": 461,
             "src": "110:147:3",
             "visibility": "public"
           },
           {
             "canonicalName": "KarmaDatabaseModel.Loan",
-            "id": 454,
+            "id": 455,
             "members": [
               {
                 "constant": false,
-                "id": 431,
+                "id": 432,
                 "name": "loanId",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "285:11:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1010,7 +1010,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 430,
+                  "id": 431,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "285:4:3",
@@ -1024,10 +1024,10 @@
               },
               {
                 "constant": false,
-                "id": 433,
+                "id": 434,
                 "name": "category",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "307:17:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1037,7 +1037,7 @@
                 },
                 "typeName": {
                   "contractScope": null,
-                  "id": 432,
+                  "id": 433,
                   "name": "Category",
                   "nodeType": "UserDefinedTypeName",
                   "referencedDeclaration": 18,
@@ -1052,10 +1052,10 @@
               },
               {
                 "constant": false,
-                "id": 435,
+                "id": 436,
                 "name": "principal",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "335:14:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1064,7 +1064,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 434,
+                  "id": 435,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "335:4:3",
@@ -1078,10 +1078,10 @@
               },
               {
                 "constant": false,
-                "id": 437,
+                "id": 438,
                 "name": "currency",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "360:17:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1091,7 +1091,7 @@
                 },
                 "typeName": {
                   "contractScope": null,
-                  "id": 436,
+                  "id": 437,
                   "name": "Currency",
                   "nodeType": "UserDefinedTypeName",
                   "referencedDeclaration": 7,
@@ -1106,10 +1106,10 @@
               },
               {
                 "constant": false,
-                "id": 439,
+                "id": 440,
                 "name": "rateOfInterest",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "388:19:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1118,7 +1118,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 438,
+                  "id": 439,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "388:4:3",
@@ -1132,10 +1132,10 @@
               },
               {
                 "constant": false,
-                "id": 441,
+                "id": 442,
                 "name": "approvedRate",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "418:17:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1144,7 +1144,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 440,
+                  "id": 441,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "418:4:3",
@@ -1158,10 +1158,10 @@
               },
               {
                 "constant": false,
-                "id": 443,
+                "id": 444,
                 "name": "incentiveRate",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "446:18:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1170,7 +1170,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 442,
+                  "id": 443,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "446:4:3",
@@ -1184,10 +1184,10 @@
               },
               {
                 "constant": false,
-                "id": 445,
+                "id": 446,
                 "name": "tenure",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "475:11:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1196,7 +1196,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 444,
+                  "id": 445,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "475:4:3",
@@ -1210,10 +1210,10 @@
               },
               {
                 "constant": false,
-                "id": 447,
+                "id": 448,
                 "name": "borrowerExternalId",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "497:26:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1222,7 +1222,7 @@
                   "typeString": "bytes32"
                 },
                 "typeName": {
-                  "id": 446,
+                  "id": 447,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
                   "src": "497:7:3",
@@ -1236,10 +1236,10 @@
               },
               {
                 "constant": false,
-                "id": 449,
+                "id": 450,
                 "name": "investorExternalId",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "533:26:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1248,7 +1248,7 @@
                   "typeString": "bytes32"
                 },
                 "typeName": {
-                  "id": 448,
+                  "id": 449,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
                   "src": "533:7:3",
@@ -1262,10 +1262,10 @@
               },
               {
                 "constant": false,
-                "id": 451,
+                "id": 452,
                 "name": "serviceProviderId",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "569:25:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1274,7 +1274,7 @@
                   "typeString": "bytes32"
                 },
                 "typeName": {
-                  "id": 450,
+                  "id": 451,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
                   "src": "569:7:3",
@@ -1288,10 +1288,10 @@
               },
               {
                 "constant": false,
-                "id": 453,
+                "id": 454,
                 "name": "status",
                 "nodeType": "VariableDeclaration",
-                "scope": 454,
+                "scope": 455,
                 "src": "605:13:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1301,7 +1301,7 @@
                 },
                 "typeName": {
                   "contractScope": null,
-                  "id": 452,
+                  "id": 453,
                   "name": "Status",
                   "nodeType": "UserDefinedTypeName",
                   "referencedDeclaration": 14,
@@ -1317,20 +1317,20 @@
             ],
             "name": "Loan",
             "nodeType": "StructDefinition",
-            "scope": 460,
+            "scope": 461,
             "src": "263:362:3",
             "visibility": "public"
           },
           {
             "canonicalName": "KarmaDatabaseModel.Customer",
-            "id": 459,
+            "id": 460,
             "members": [
               {
                 "constant": false,
-                "id": 456,
+                "id": 457,
                 "name": "customerExternalId",
                 "nodeType": "VariableDeclaration",
-                "scope": 459,
+                "scope": 460,
                 "src": "657:26:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1339,7 +1339,7 @@
                   "typeString": "bytes32"
                 },
                 "typeName": {
-                  "id": 455,
+                  "id": 456,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
                   "src": "657:7:3",
@@ -1353,10 +1353,10 @@
               },
               {
                 "constant": false,
-                "id": 458,
+                "id": 459,
                 "name": "customerType",
                 "nodeType": "VariableDeclaration",
-                "scope": 459,
+                "scope": 460,
                 "src": "693:25:3",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1366,7 +1366,7 @@
                 },
                 "typeName": {
                   "contractScope": null,
-                  "id": 457,
+                  "id": 458,
                   "name": "CustomerType",
                   "nodeType": "UserDefinedTypeName",
                   "referencedDeclaration": 21,
@@ -1382,12 +1382,12 @@
             ],
             "name": "Customer",
             "nodeType": "StructDefinition",
-            "scope": 460,
+            "scope": 461,
             "src": "631:94:3",
             "visibility": "public"
           }
         ],
-        "scope": 461,
+        "scope": 462,
         "src": "58:669:3"
       }
     ],
@@ -1399,5 +1399,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-11-05T11:11:41.165Z"
+  "updatedAt": "2018-11-05T12:21:09.147Z"
 }

@@ -29,28 +29,28 @@ contract KarmaDatabase is KarmaDatabaseInterface {
     constructor () public {
     }
 
-    function createCustomer(bytes32 _customerExternalId, CustomerType customerType) returns (uint _customerId){
+    function createCustomer(bytes32 _customerExternalId, CustomerType _customerType) public returns (uint _customerId){
         _customerId =  customers.length++;
         customerIds[msg.sender] = _customerId;
 
         Customer storage c = customers[_customerId];
         c.customerExternalId = _customerExternalId;
-        c.customerType = customerType;
+        c.customerType = _customerType;
 
         customerByExternalId[_customerExternalId] = c;
 
-        emit LogNewCustomer(_customerId, msg.sender, customerType);
+        emit LogNewCustomer(_customerId, msg.sender, _customerType);
     }
 
-    function createServiceProvider(bytes32 _serviceProviderExternalId, address _providerAddress, bytes32 name, Category category) returns (uint _serviceProviderId){
+    function createServiceProvider(bytes32 _serviceProviderExternalId, address _providerAddress, bytes32 _name, Category _category) public returns (uint _serviceProviderId){
         _serviceProviderId = serviceProviders.length++;
 
         serviceProviderIds[_providerAddress] = _serviceProviderId;
 
         ServiceProvider storage sp = serviceProviders[_serviceProviderId];
         sp.providerAddress = _providerAddress;
-        sp.name = name;
-        sp.category = category;
+        sp.name = _name;
+        sp.category = _category;
         sp.serviceProviderId = _serviceProviderExternalId;
 
         serviceProviderByExternalIds[_serviceProviderExternalId] = sp;
@@ -58,7 +58,7 @@ contract KarmaDatabase is KarmaDatabaseInterface {
         emit LogNewServiceProvider(_serviceProviderId, _providerAddress, name, category);
     }
 
-    function createLoan(uint _principal, uint tenure, Currency _currency, Category _category, bytes32 _customerExternalId, bytes32 _serviceProviderId) returns (uint _loanId) {
+    function createLoan(uint _principal, uint _tenure, Currency _currency, Category _category, bytes32 _customerExternalId, bytes32 _serviceProviderId) public returns (uint _loanId) {
         _loanId = loans.length++;
         // push Loan Id into lookup based on Address
         customerLoans[msg.sender].push(_loanId);
@@ -70,7 +70,7 @@ contract KarmaDatabase is KarmaDatabaseInterface {
         Loan storage l = loans[_loanId];
         l.loanId = _loanId;
         l.principal = _principal;
-        l.tenure = tenure;
+        l.tenure = _tenure;
         l.currency = _currency;
         l.borrowerExternalId = _customerExternalId;
         l.serviceProviderId = _serviceProviderId;
@@ -78,6 +78,6 @@ contract KarmaDatabase is KarmaDatabaseInterface {
         l.status = Status.Apply;
 
         // Notify new loan application
-        emit LogLoanApplied(_loanId, _customerExternalId, _serviceProviderId,_principal, tenure);
+        emit LogLoanApplied(_loanId, _customerExternalId, _serviceProviderId,_principal, _tenure);
     }
 }
