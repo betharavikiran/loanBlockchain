@@ -1,0 +1,1403 @@
+{
+  "contractName": "KarmaDatabaseModel",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "_loanId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "_customerId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "_serviceProviderId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "principal",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "tenure",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogLoanApplied",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "_loanId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "principal",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "rate",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "tenure",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogLoanAccepted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "_loanId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "principal",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogLoanDisbursed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "_loanId",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogLoanRepaid",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "_loanId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "reason",
+          "type": "bytes32"
+        }
+      ],
+      "name": "LogLoanDeclined",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "_loanId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "strReason",
+          "type": "bytes32"
+        }
+      ],
+      "name": "LogSendFail",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "_recipient",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_from",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogSendFunds",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "_sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_to",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogReceivedFunds",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "_serviceProviderId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "_serviceProvider",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_name",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "_category",
+          "type": "uint8"
+        }
+      ],
+      "name": "LogNewServiceProvider",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "_customerId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "_customer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_customerType",
+          "type": "uint8"
+        }
+      ],
+      "name": "LogNewCustomer",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3006080604052600080fd00a165627a7a723058208a7ac772152b0cdc08ed87bd3619ec577496b1a682975d6ffca6fdae88099e240029",
+  "deployedBytecode": "0x6080604052600080fd00a165627a7a723058208a7ac772152b0cdc08ed87bd3619ec577496b1a682975d6ffca6fdae88099e240029",
+  "sourceMap": "58:669:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;58:669:3;;;;;;;",
+  "deployedSourceMap": "58:669:3:-;;;;;",
+  "source": "pragma solidity ^0.4.24;\n\nimport \"./KarmaConstants.sol\";\n\ncontract KarmaDatabaseModel is KarmaConstants {\n    struct ServiceProvider {\n        address providerAddress;\n        bytes32 name;\n        Category category;\n        bytes32 serviceProviderId;\n    }\n\n    struct Loan {\n        uint loanId;\n\n        Category category;\n\n        uint principal;\n\n        Currency currency;\n\n        uint rateOfInterest;\n\n        uint approvedRate;\n\n        uint incentiveRate;\n\n        uint tenure;\n\n        bytes32 borrowerExternalId;\n        bytes32 investorExternalId;\n        bytes32 serviceProviderId;\n\n        Status status;\n    }\n\n    struct Customer {\n        bytes32 customerExternalId;\n        CustomerType customerType;\n    }\n}\n",
+  "sourcePath": "/home/speak2ravi/Documents/develop/karmaBlockChain/contracts/KarmaDatabaseModel.sol",
+  "ast": {
+    "absolutePath": "/home/speak2ravi/Documents/develop/karmaBlockChain/contracts/KarmaDatabaseModel.sol",
+    "exportedSymbols": {
+      "KarmaDatabaseModel": [
+        460
+      ]
+    },
+    "id": 461,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 417,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:3"
+      },
+      {
+        "absolutePath": "/home/speak2ravi/Documents/develop/karmaBlockChain/contracts/KarmaConstants.sol",
+        "file": "./KarmaConstants.sol",
+        "id": 418,
+        "nodeType": "ImportDirective",
+        "scope": 461,
+        "sourceUnit": 101,
+        "src": "26:30:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 419,
+              "name": "KarmaConstants",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 100,
+              "src": "89:14:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_KarmaConstants_$100",
+                "typeString": "contract KarmaConstants"
+              }
+            },
+            "id": 420,
+            "nodeType": "InheritanceSpecifier",
+            "src": "89:14:3"
+          }
+        ],
+        "contractDependencies": [
+          100
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 460,
+        "linearizedBaseContracts": [
+          460,
+          100
+        ],
+        "name": "KarmaDatabaseModel",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "KarmaDatabaseModel.ServiceProvider",
+            "id": 429,
+            "members": [
+              {
+                "constant": false,
+                "id": 422,
+                "name": "providerAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 429,
+                "src": "143:23:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 421,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "143:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 424,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 429,
+                "src": "176:12:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 423,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "176:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 426,
+                "name": "category",
+                "nodeType": "VariableDeclaration",
+                "scope": 429,
+                "src": "198:17:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Category_$18",
+                  "typeString": "enum KarmaConstants.Category"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 425,
+                  "name": "Category",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 18,
+                  "src": "198:8:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Category_$18",
+                    "typeString": "enum KarmaConstants.Category"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 428,
+                "name": "serviceProviderId",
+                "nodeType": "VariableDeclaration",
+                "scope": 429,
+                "src": "225:25:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 427,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "225:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "ServiceProvider",
+            "nodeType": "StructDefinition",
+            "scope": 460,
+            "src": "110:147:3",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "KarmaDatabaseModel.Loan",
+            "id": 454,
+            "members": [
+              {
+                "constant": false,
+                "id": 431,
+                "name": "loanId",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "285:11:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 430,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "285:4:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 433,
+                "name": "category",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "307:17:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Category_$18",
+                  "typeString": "enum KarmaConstants.Category"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 432,
+                  "name": "Category",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 18,
+                  "src": "307:8:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Category_$18",
+                    "typeString": "enum KarmaConstants.Category"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 435,
+                "name": "principal",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "335:14:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 434,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "335:4:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 437,
+                "name": "currency",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "360:17:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Currency_$7",
+                  "typeString": "enum KarmaConstants.Currency"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 436,
+                  "name": "Currency",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 7,
+                  "src": "360:8:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Currency_$7",
+                    "typeString": "enum KarmaConstants.Currency"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 439,
+                "name": "rateOfInterest",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "388:19:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 438,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "388:4:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 441,
+                "name": "approvedRate",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "418:17:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 440,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "418:4:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 443,
+                "name": "incentiveRate",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "446:18:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 442,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "446:4:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 445,
+                "name": "tenure",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "475:11:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 444,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "475:4:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 447,
+                "name": "borrowerExternalId",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "497:26:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 446,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "497:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 449,
+                "name": "investorExternalId",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "533:26:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 448,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "533:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 451,
+                "name": "serviceProviderId",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "569:25:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 450,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "569:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 453,
+                "name": "status",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "605:13:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Status_$14",
+                  "typeString": "enum KarmaConstants.Status"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 452,
+                  "name": "Status",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 14,
+                  "src": "605:6:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Status_$14",
+                    "typeString": "enum KarmaConstants.Status"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Loan",
+            "nodeType": "StructDefinition",
+            "scope": 460,
+            "src": "263:362:3",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "KarmaDatabaseModel.Customer",
+            "id": 459,
+            "members": [
+              {
+                "constant": false,
+                "id": 456,
+                "name": "customerExternalId",
+                "nodeType": "VariableDeclaration",
+                "scope": 459,
+                "src": "657:26:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 455,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "657:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 458,
+                "name": "customerType",
+                "nodeType": "VariableDeclaration",
+                "scope": 459,
+                "src": "693:25:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_CustomerType_$21",
+                  "typeString": "enum KarmaConstants.CustomerType"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 457,
+                  "name": "CustomerType",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 21,
+                  "src": "693:12:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_CustomerType_$21",
+                    "typeString": "enum KarmaConstants.CustomerType"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Customer",
+            "nodeType": "StructDefinition",
+            "scope": 460,
+            "src": "631:94:3",
+            "visibility": "public"
+          }
+        ],
+        "scope": 461,
+        "src": "58:669:3"
+      }
+    ],
+    "src": "0:728:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/speak2ravi/Documents/develop/karmaBlockChain/contracts/KarmaDatabaseModel.sol",
+    "exportedSymbols": {
+      "KarmaDatabaseModel": [
+        460
+      ]
+    },
+    "id": 461,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 417,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:3"
+      },
+      {
+        "absolutePath": "/home/speak2ravi/Documents/develop/karmaBlockChain/contracts/KarmaConstants.sol",
+        "file": "./KarmaConstants.sol",
+        "id": 418,
+        "nodeType": "ImportDirective",
+        "scope": 461,
+        "sourceUnit": 101,
+        "src": "26:30:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 419,
+              "name": "KarmaConstants",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 100,
+              "src": "89:14:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_KarmaConstants_$100",
+                "typeString": "contract KarmaConstants"
+              }
+            },
+            "id": 420,
+            "nodeType": "InheritanceSpecifier",
+            "src": "89:14:3"
+          }
+        ],
+        "contractDependencies": [
+          100
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 460,
+        "linearizedBaseContracts": [
+          460,
+          100
+        ],
+        "name": "KarmaDatabaseModel",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "KarmaDatabaseModel.ServiceProvider",
+            "id": 429,
+            "members": [
+              {
+                "constant": false,
+                "id": 422,
+                "name": "providerAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 429,
+                "src": "143:23:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 421,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "143:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 424,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 429,
+                "src": "176:12:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 423,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "176:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 426,
+                "name": "category",
+                "nodeType": "VariableDeclaration",
+                "scope": 429,
+                "src": "198:17:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Category_$18",
+                  "typeString": "enum KarmaConstants.Category"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 425,
+                  "name": "Category",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 18,
+                  "src": "198:8:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Category_$18",
+                    "typeString": "enum KarmaConstants.Category"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 428,
+                "name": "serviceProviderId",
+                "nodeType": "VariableDeclaration",
+                "scope": 429,
+                "src": "225:25:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 427,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "225:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "ServiceProvider",
+            "nodeType": "StructDefinition",
+            "scope": 460,
+            "src": "110:147:3",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "KarmaDatabaseModel.Loan",
+            "id": 454,
+            "members": [
+              {
+                "constant": false,
+                "id": 431,
+                "name": "loanId",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "285:11:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 430,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "285:4:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 433,
+                "name": "category",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "307:17:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Category_$18",
+                  "typeString": "enum KarmaConstants.Category"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 432,
+                  "name": "Category",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 18,
+                  "src": "307:8:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Category_$18",
+                    "typeString": "enum KarmaConstants.Category"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 435,
+                "name": "principal",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "335:14:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 434,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "335:4:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 437,
+                "name": "currency",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "360:17:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Currency_$7",
+                  "typeString": "enum KarmaConstants.Currency"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 436,
+                  "name": "Currency",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 7,
+                  "src": "360:8:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Currency_$7",
+                    "typeString": "enum KarmaConstants.Currency"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 439,
+                "name": "rateOfInterest",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "388:19:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 438,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "388:4:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 441,
+                "name": "approvedRate",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "418:17:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 440,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "418:4:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 443,
+                "name": "incentiveRate",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "446:18:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 442,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "446:4:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 445,
+                "name": "tenure",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "475:11:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 444,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "475:4:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 447,
+                "name": "borrowerExternalId",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "497:26:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 446,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "497:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 449,
+                "name": "investorExternalId",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "533:26:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 448,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "533:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 451,
+                "name": "serviceProviderId",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "569:25:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 450,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "569:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 453,
+                "name": "status",
+                "nodeType": "VariableDeclaration",
+                "scope": 454,
+                "src": "605:13:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Status_$14",
+                  "typeString": "enum KarmaConstants.Status"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 452,
+                  "name": "Status",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 14,
+                  "src": "605:6:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Status_$14",
+                    "typeString": "enum KarmaConstants.Status"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Loan",
+            "nodeType": "StructDefinition",
+            "scope": 460,
+            "src": "263:362:3",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "KarmaDatabaseModel.Customer",
+            "id": 459,
+            "members": [
+              {
+                "constant": false,
+                "id": 456,
+                "name": "customerExternalId",
+                "nodeType": "VariableDeclaration",
+                "scope": 459,
+                "src": "657:26:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 455,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "657:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 458,
+                "name": "customerType",
+                "nodeType": "VariableDeclaration",
+                "scope": 459,
+                "src": "693:25:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_CustomerType_$21",
+                  "typeString": "enum KarmaConstants.CustomerType"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 457,
+                  "name": "CustomerType",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 21,
+                  "src": "693:12:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_CustomerType_$21",
+                    "typeString": "enum KarmaConstants.CustomerType"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Customer",
+            "nodeType": "StructDefinition",
+            "scope": 460,
+            "src": "631:94:3",
+            "visibility": "public"
+          }
+        ],
+        "scope": 461,
+        "src": "58:669:3"
+      }
+    ],
+    "src": "0:728:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-11-05T11:11:41.165Z"
+}
