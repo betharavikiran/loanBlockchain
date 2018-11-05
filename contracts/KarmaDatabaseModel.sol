@@ -11,6 +11,9 @@ contract KarmaDatabaseModel is KarmaConstants {
     }
 
     struct Loan {
+        address borrowerAddress;
+        address investorAddress;
+
         uint loanId;
 
         Category category;
@@ -35,6 +38,7 @@ contract KarmaDatabaseModel is KarmaConstants {
     }
 
     struct Customer {
+        address customerAddress;
         bytes32 customerExternalId;
         CustomerType customerType;
     }
