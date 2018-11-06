@@ -1,41 +1,37 @@
 pragma solidity ^0.4.24;
 
+import "./ConvertLib.sol";
 import "./KarmaDatabaseModel.sol";
 import "./KarmaConstants.sol";
 import "./KarmaDatabaseInterface.sol";
 
 
-contract KarmaDatabase is KarmaDatabaseInterface {
+contract KarmaDatabase is KarmaDatabaseInterface, ConvertLib {
     // List of Customers
     Customer[] public customers;
-    // lookup CustomerId from address
-    mapping (address => uint) public customerIds;
-    // lookup Customer based on external id
-    mapping (bytes32 => Customer) public customerByExternalId;
+    mapping (address => uint) public customerIds; // Extract data from list using index based id
+    mapping (bytes32 => Customer) public customerByExternalId; // extract data based on Database id
 
     // List of Service providers
     ServiceProvider[] public serviceProviders;
-    // Lookup serv
-    mapping (address => uint) public serviceProviderIds;
-    mapping (bytes32 => ServiceProvider) public serviceProviderByExternalIds;
+    mapping (address => uint) public serviceProviderIds; // Extract data from list using index based id
+    mapping (bytes32 => ServiceProvider) public serviceProviderByExternalIds; // extract data based on Database id
 
     // List of Loans
     Loan[] public loans;
-    // lookup customer loan ids by external customer id
-    mapping (bytes32 => uint[]) public customerLoansById;
-    // look up customer loan ids by address
-    mapping (address => uint[]) public customerLoans;
+    mapping (bytes32 => uint[]) public customerLoansById; // Extract data from list using index based id
+    mapping (address => uint[]) public customerLoans; // extract data based on Database id
 
     function createCustomer(bytes32 _customerExternalId, CustomerType _customerType) external returns (uint _customerId){
         _customerId =  customers.length++;
-        customerIds[msg.sender] = _customerId;
 
+        customerIds[msg.sender] = _customerId;
         Customer storage c = customers[_customerId];
-        c.customerExternalId = _customerExternalId;
+        c.customerExternalId = stringToBytes32(_customerExternalId);
         c.customerType = _customerType;
         c.customerAddress = msg.sender;
 
-        customerByExternalId[_customerExternalId] = c;
+        customerByExternalId[stringToBytes32(_customerExternalId)] = c;
 
         emit LogNewCustomer(_customerId, msg.sender, _customerType);
     }
@@ -58,10 +54,7 @@ contract KarmaDatabase is KarmaDatabaseInterface {
 
     function createLoan(uint _principal, uint _tenure, Currency _currency, Category _category, bytes32 _customerExternalId, bytes32 _serviceProviderId) external returns (uint _loanId) {
         _loanId = loans.length++;
-        // push Loan Id into lookup based on Address
         customerLoans[msg.sender].push(_loanId);
-
-        // psuh Loan Id into Lookup based on external Loan id
         customerLoansById[_customerExternalId].push(_loanId);
 
         // Populate the loan details for the loan based on loan Ids in the Loans Array
@@ -77,6 +70,6 @@ contract KarmaDatabase is KarmaDatabaseInterface {
         l.status = Status.Apply;
 
         // Notify new loan application
-        //emit LogLoanApplied(_loanId, _customerExternalId, _serviceProviderId,_principal, _tenure);
+        emit LogLoanApplied(_loanId, _customerExternalId, _serviceProviderId,_principal, _tenure);
     }
 }

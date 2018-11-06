@@ -12,6 +12,9 @@ const drizzleOptions = {
   contracts: [
    KarmaDatabaseInterface,
   ],
+  events: {
+      KarmaDatabaseInterface: ['LogNewCustomer', 'LogNewServiceProvider','LogLoanApplied']
+  },
   polls: {
     accounts: 1500
   }

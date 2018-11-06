@@ -219,22 +219,22 @@
   ],
   "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3006080604052600080fd00a165627a7a72305820c3f2e6bee761f5a78a1c87a806cb0208254082a92f0335048db890eccc5e37a30029",
   "deployedBytecode": "0x6080604052600080fd00a165627a7a72305820c3f2e6bee761f5a78a1c87a806cb0208254082a92f0335048db890eccc5e37a30029",
-  "sourceMap": "26:1427:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:1427:0;;;;;;;",
-  "deployedSourceMap": "26:1427:0:-;;;;;",
+  "sourceMap": "26:1427:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:1427:1;;;;;;;",
+  "deployedSourceMap": "26:1427:1:-;;;;;",
   "source": "pragma solidity ^0.4.24;\n\ncontract KarmaConstants {\n    enum Currency {\n        GBP,\n        CAD,\n        EUR,\n        USD,\n        JPY\n    }\n\n    enum Status {\n        Apply,\n        Processing,\n        Granted,\n        Disbursed,\n        Active,\n        Closed\n    }\n\n    enum Category {\n        Telephone,\n        Grocery,\n        Electricity\n    }\n\n    enum CustomerType {\n        Borrower,\n        Investor\n    }\n\n\n    event LogLoanApplied(\n       uint _loanId,\n        bytes32 _customerId,\n        bytes32 _serviceProviderId,\n       uint principal,\n       uint tenure\n    );\n\n    event LogLoanAccepted(\n       uint _loanId,\n       uint principal,\n       uint rate,\n       uint tenure\n    );\n\n    event LogLoanDisbursed(\n       uint _loanId,\n       uint principal\n    );\n\n    event LogLoanRepaid (\n       uint _loanId\n    );\n\n    event LogLoanDeclined (\n       uint _loanId,\n       bytes32 reason\n    );\n\n    event LogSendFail(\n       uint _loanId,\n       bytes32 strReason\n    );\n\n    event LogSendFunds(\n       address _recipient,\n       uint _from,\n       uint amount\n    );\n\n    event LogReceivedFunds(\n       address _sender,\n       uint _to,\n       uint amount\n    );\n\n    event LogNewServiceProvider(\n       uint _serviceProviderId,\n       address _serviceProvider,\n       bytes32 _name,\n       Category _category\n    );\n\n    event LogNewCustomer(\n       uint _customerId,\n       address _customer,\n       CustomerType _customerType\n    );\n}\n",
   "sourcePath": "/home/speak2ravi/Documents/develop/karmaBlockChain/contracts/KarmaConstants.sol",
   "ast": {
     "absolutePath": "/home/speak2ravi/Documents/develop/karmaBlockChain/contracts/KarmaConstants.sol",
     "exportedSymbols": {
       "KarmaConstants": [
-        100
+        344
       ]
     },
-    "id": 101,
+    "id": 345,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1,
+        "id": 245,
         "literals": [
           "solidity",
           "^",
@@ -242,7 +242,7 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:0"
+        "src": "0:24:1"
       },
       {
         "baseContracts": [],
@@ -250,163 +250,163 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 100,
+        "id": 344,
         "linearizedBaseContracts": [
-          100
+          344
         ],
         "name": "KarmaConstants",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "KarmaConstants.Currency",
-            "id": 7,
+            "id": 251,
             "members": [
               {
-                "id": 2,
+                "id": 246,
                 "name": "GBP",
                 "nodeType": "EnumValue",
-                "src": "80:3:0"
+                "src": "80:3:1"
               },
               {
-                "id": 3,
+                "id": 247,
                 "name": "CAD",
                 "nodeType": "EnumValue",
-                "src": "93:3:0"
+                "src": "93:3:1"
               },
               {
-                "id": 4,
+                "id": 248,
                 "name": "EUR",
                 "nodeType": "EnumValue",
-                "src": "106:3:0"
+                "src": "106:3:1"
               },
               {
-                "id": 5,
+                "id": 249,
                 "name": "USD",
                 "nodeType": "EnumValue",
-                "src": "119:3:0"
+                "src": "119:3:1"
               },
               {
-                "id": 6,
+                "id": 250,
                 "name": "JPY",
                 "nodeType": "EnumValue",
-                "src": "132:3:0"
+                "src": "132:3:1"
               }
             ],
             "name": "Currency",
             "nodeType": "EnumDefinition",
-            "src": "56:85:0"
+            "src": "56:85:1"
           },
           {
             "canonicalName": "KarmaConstants.Status",
-            "id": 14,
+            "id": 258,
             "members": [
               {
-                "id": 8,
+                "id": 252,
                 "name": "Apply",
                 "nodeType": "EnumValue",
-                "src": "169:5:0"
+                "src": "169:5:1"
               },
               {
-                "id": 9,
+                "id": 253,
                 "name": "Processing",
                 "nodeType": "EnumValue",
-                "src": "184:10:0"
+                "src": "184:10:1"
               },
               {
-                "id": 10,
+                "id": 254,
                 "name": "Granted",
                 "nodeType": "EnumValue",
-                "src": "204:7:0"
+                "src": "204:7:1"
               },
               {
-                "id": 11,
+                "id": 255,
                 "name": "Disbursed",
                 "nodeType": "EnumValue",
-                "src": "221:9:0"
+                "src": "221:9:1"
               },
               {
-                "id": 12,
+                "id": 256,
                 "name": "Active",
                 "nodeType": "EnumValue",
-                "src": "240:6:0"
+                "src": "240:6:1"
               },
               {
-                "id": 13,
+                "id": 257,
                 "name": "Closed",
                 "nodeType": "EnumValue",
-                "src": "256:6:0"
+                "src": "256:6:1"
               }
             ],
             "name": "Status",
             "nodeType": "EnumDefinition",
-            "src": "147:121:0"
+            "src": "147:121:1"
           },
           {
             "canonicalName": "KarmaConstants.Category",
-            "id": 18,
+            "id": 262,
             "members": [
               {
-                "id": 15,
+                "id": 259,
                 "name": "Telephone",
                 "nodeType": "EnumValue",
-                "src": "298:9:0"
+                "src": "298:9:1"
               },
               {
-                "id": 16,
+                "id": 260,
                 "name": "Grocery",
                 "nodeType": "EnumValue",
-                "src": "317:7:0"
+                "src": "317:7:1"
               },
               {
-                "id": 17,
+                "id": 261,
                 "name": "Electricity",
                 "nodeType": "EnumValue",
-                "src": "334:11:0"
+                "src": "334:11:1"
               }
             ],
             "name": "Category",
             "nodeType": "EnumDefinition",
-            "src": "274:77:0"
+            "src": "274:77:1"
           },
           {
             "canonicalName": "KarmaConstants.CustomerType",
-            "id": 21,
+            "id": 265,
             "members": [
               {
-                "id": 19,
+                "id": 263,
                 "name": "Borrower",
                 "nodeType": "EnumValue",
-                "src": "385:8:0"
+                "src": "385:8:1"
               },
               {
-                "id": 20,
+                "id": 264,
                 "name": "Investor",
                 "nodeType": "EnumValue",
-                "src": "403:8:0"
+                "src": "403:8:1"
               }
             ],
             "name": "CustomerType",
             "nodeType": "EnumDefinition",
-            "src": "357:60:0"
+            "src": "357:60:1"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 33,
+            "id": 277,
             "name": "LogLoanApplied",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 32,
+              "id": 276,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23,
+                  "id": 267,
                   "indexed": false,
                   "name": "_loanId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 33,
-                  "src": "453:12:0",
+                  "scope": 277,
+                  "src": "453:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -414,10 +414,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 22,
+                    "id": 266,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "453:4:0",
+                    "src": "453:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -428,12 +428,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 25,
+                  "id": 269,
                   "indexed": false,
                   "name": "_customerId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 33,
-                  "src": "475:19:0",
+                  "scope": 277,
+                  "src": "475:19:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -441,10 +441,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 24,
+                    "id": 268,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "475:7:0",
+                    "src": "475:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -455,12 +455,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 27,
+                  "id": 271,
                   "indexed": false,
                   "name": "_serviceProviderId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 33,
-                  "src": "504:26:0",
+                  "scope": 277,
+                  "src": "504:26:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -468,10 +468,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 26,
+                    "id": 270,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "504:7:0",
+                    "src": "504:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -482,12 +482,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 29,
+                  "id": 273,
                   "indexed": false,
                   "name": "principal",
                   "nodeType": "VariableDeclaration",
-                  "scope": 33,
-                  "src": "539:14:0",
+                  "scope": 277,
+                  "src": "539:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -495,10 +495,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28,
+                    "id": 272,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "539:4:0",
+                    "src": "539:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -509,12 +509,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 31,
+                  "id": 275,
                   "indexed": false,
                   "name": "tenure",
                   "nodeType": "VariableDeclaration",
-                  "scope": 33,
-                  "src": "562:11:0",
+                  "scope": 277,
+                  "src": "562:11:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -522,10 +522,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 30,
+                    "id": 274,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "562:4:0",
+                    "src": "562:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -535,28 +535,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "444:135:0"
+              "src": "444:135:1"
             },
-            "src": "424:156:0"
+            "src": "424:156:1"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 43,
+            "id": 287,
             "name": "LogLoanAccepted",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 42,
+              "id": 286,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 35,
+                  "id": 279,
                   "indexed": false,
                   "name": "_loanId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 43,
-                  "src": "616:12:0",
+                  "scope": 287,
+                  "src": "616:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -564,10 +564,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 34,
+                    "id": 278,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "616:4:0",
+                    "src": "616:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -578,12 +578,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 37,
+                  "id": 281,
                   "indexed": false,
                   "name": "principal",
                   "nodeType": "VariableDeclaration",
-                  "scope": 43,
-                  "src": "637:14:0",
+                  "scope": 287,
+                  "src": "637:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -591,10 +591,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 36,
+                    "id": 280,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "637:4:0",
+                    "src": "637:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -605,12 +605,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 39,
+                  "id": 283,
                   "indexed": false,
                   "name": "rate",
                   "nodeType": "VariableDeclaration",
-                  "scope": 43,
-                  "src": "660:9:0",
+                  "scope": 287,
+                  "src": "660:9:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -618,10 +618,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 38,
+                    "id": 282,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "660:4:0",
+                    "src": "660:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -632,12 +632,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 41,
+                  "id": 285,
                   "indexed": false,
                   "name": "tenure",
                   "nodeType": "VariableDeclaration",
-                  "scope": 43,
-                  "src": "678:11:0",
+                  "scope": 287,
+                  "src": "678:11:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -645,10 +645,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 40,
+                    "id": 284,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "678:4:0",
+                    "src": "678:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -658,28 +658,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "607:88:0"
+              "src": "607:88:1"
             },
-            "src": "586:110:0"
+            "src": "586:110:1"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 49,
+            "id": 293,
             "name": "LogLoanDisbursed",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 48,
+              "id": 292,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 45,
+                  "id": 289,
                   "indexed": false,
                   "name": "_loanId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 49,
-                  "src": "733:12:0",
+                  "scope": 293,
+                  "src": "733:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -687,10 +687,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 44,
+                    "id": 288,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "733:4:0",
+                    "src": "733:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -701,12 +701,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 47,
+                  "id": 291,
                   "indexed": false,
                   "name": "principal",
                   "nodeType": "VariableDeclaration",
-                  "scope": 49,
-                  "src": "754:14:0",
+                  "scope": 293,
+                  "src": "754:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -714,10 +714,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 46,
+                    "id": 290,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "754:4:0",
+                    "src": "754:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -727,28 +727,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "724:50:0"
+              "src": "724:50:1"
             },
-            "src": "702:73:0"
+            "src": "702:73:1"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 53,
+            "id": 297,
             "name": "LogLoanRepaid",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 52,
+              "id": 296,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 51,
+                  "id": 295,
                   "indexed": false,
                   "name": "_loanId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 53,
-                  "src": "810:12:0",
+                  "scope": 297,
+                  "src": "810:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -756,10 +756,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 50,
+                    "id": 294,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "810:4:0",
+                    "src": "810:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -769,28 +769,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "801:27:0"
+              "src": "801:27:1"
             },
-            "src": "781:48:0"
+            "src": "781:48:1"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 59,
+            "id": 303,
             "name": "LogLoanDeclined",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 58,
+              "id": 302,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 55,
+                  "id": 299,
                   "indexed": false,
                   "name": "_loanId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 59,
-                  "src": "866:12:0",
+                  "scope": 303,
+                  "src": "866:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -798,10 +798,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 54,
+                    "id": 298,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "866:4:0",
+                    "src": "866:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -812,12 +812,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 57,
+                  "id": 301,
                   "indexed": false,
                   "name": "reason",
                   "nodeType": "VariableDeclaration",
-                  "scope": 59,
-                  "src": "887:14:0",
+                  "scope": 303,
+                  "src": "887:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -825,10 +825,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 56,
+                    "id": 300,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "887:7:0",
+                    "src": "887:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -838,28 +838,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "857:50:0"
+              "src": "857:50:1"
             },
-            "src": "835:73:0"
+            "src": "835:73:1"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 65,
+            "id": 309,
             "name": "LogSendFail",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 64,
+              "id": 308,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 61,
+                  "id": 305,
                   "indexed": false,
                   "name": "_loanId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 65,
-                  "src": "940:12:0",
+                  "scope": 309,
+                  "src": "940:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -867,10 +867,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 60,
+                    "id": 304,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "940:4:0",
+                    "src": "940:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -881,12 +881,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 63,
+                  "id": 307,
                   "indexed": false,
                   "name": "strReason",
                   "nodeType": "VariableDeclaration",
-                  "scope": 65,
-                  "src": "961:17:0",
+                  "scope": 309,
+                  "src": "961:17:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -894,10 +894,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 62,
+                    "id": 306,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "961:7:0",
+                    "src": "961:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -907,28 +907,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "931:53:0"
+              "src": "931:53:1"
             },
-            "src": "914:71:0"
+            "src": "914:71:1"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 73,
+            "id": 317,
             "name": "LogSendFunds",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 72,
+              "id": 316,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 67,
+                  "id": 311,
                   "indexed": false,
                   "name": "_recipient",
                   "nodeType": "VariableDeclaration",
-                  "scope": 73,
-                  "src": "1018:18:0",
+                  "scope": 317,
+                  "src": "1018:18:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -936,10 +936,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 66,
+                    "id": 310,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1018:7:0",
+                    "src": "1018:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -950,12 +950,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 69,
+                  "id": 313,
                   "indexed": false,
                   "name": "_from",
                   "nodeType": "VariableDeclaration",
-                  "scope": 73,
-                  "src": "1045:10:0",
+                  "scope": 317,
+                  "src": "1045:10:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -963,10 +963,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 68,
+                    "id": 312,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1045:4:0",
+                    "src": "1045:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -977,12 +977,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 71,
+                  "id": 315,
                   "indexed": false,
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 73,
-                  "src": "1064:11:0",
+                  "scope": 317,
+                  "src": "1064:11:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -990,10 +990,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 70,
+                    "id": 314,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1064:4:0",
+                    "src": "1064:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1003,28 +1003,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1009:72:0"
+              "src": "1009:72:1"
             },
-            "src": "991:91:0"
+            "src": "991:91:1"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 81,
+            "id": 325,
             "name": "LogReceivedFunds",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 80,
+              "id": 324,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 75,
+                  "id": 319,
                   "indexed": false,
                   "name": "_sender",
                   "nodeType": "VariableDeclaration",
-                  "scope": 81,
-                  "src": "1119:15:0",
+                  "scope": 325,
+                  "src": "1119:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1032,10 +1032,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 74,
+                    "id": 318,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1119:7:0",
+                    "src": "1119:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1046,12 +1046,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 77,
+                  "id": 321,
                   "indexed": false,
                   "name": "_to",
                   "nodeType": "VariableDeclaration",
-                  "scope": 81,
-                  "src": "1143:8:0",
+                  "scope": 325,
+                  "src": "1143:8:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1059,10 +1059,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 76,
+                    "id": 320,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1143:4:0",
+                    "src": "1143:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1073,12 +1073,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 79,
+                  "id": 323,
                   "indexed": false,
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 81,
-                  "src": "1160:11:0",
+                  "scope": 325,
+                  "src": "1160:11:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1086,10 +1086,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 78,
+                    "id": 322,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1160:4:0",
+                    "src": "1160:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1099,28 +1099,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1110:67:0"
+              "src": "1110:67:1"
             },
-            "src": "1088:90:0"
+            "src": "1088:90:1"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 91,
+            "id": 335,
             "name": "LogNewServiceProvider",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 90,
+              "id": 334,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 83,
+                  "id": 327,
                   "indexed": false,
                   "name": "_serviceProviderId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 91,
-                  "src": "1220:23:0",
+                  "scope": 335,
+                  "src": "1220:23:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1128,10 +1128,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 82,
+                    "id": 326,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1220:4:0",
+                    "src": "1220:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1142,12 +1142,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 85,
+                  "id": 329,
                   "indexed": false,
                   "name": "_serviceProvider",
                   "nodeType": "VariableDeclaration",
-                  "scope": 91,
-                  "src": "1252:24:0",
+                  "scope": 335,
+                  "src": "1252:24:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1155,10 +1155,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 84,
+                    "id": 328,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1252:7:0",
+                    "src": "1252:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1169,12 +1169,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 87,
+                  "id": 331,
                   "indexed": false,
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 91,
-                  "src": "1285:13:0",
+                  "scope": 335,
+                  "src": "1285:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1182,10 +1182,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 86,
+                    "id": 330,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1285:7:0",
+                    "src": "1285:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1196,27 +1196,27 @@
                 },
                 {
                   "constant": false,
-                  "id": 89,
+                  "id": 333,
                   "indexed": false,
                   "name": "_category",
                   "nodeType": "VariableDeclaration",
-                  "scope": 91,
-                  "src": "1307:18:0",
+                  "scope": 335,
+                  "src": "1307:18:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_Category_$18",
+                    "typeIdentifier": "t_enum$_Category_$262",
                     "typeString": "enum KarmaConstants.Category"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 88,
+                    "id": 332,
                     "name": "Category",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 18,
-                    "src": "1307:8:0",
+                    "referencedDeclaration": 262,
+                    "src": "1307:8:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_Category_$18",
+                      "typeIdentifier": "t_enum$_Category_$262",
                       "typeString": "enum KarmaConstants.Category"
                     }
                   },
@@ -1224,28 +1224,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1211:120:0"
+              "src": "1211:120:1"
             },
-            "src": "1184:148:0"
+            "src": "1184:148:1"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 99,
+            "id": 343,
             "name": "LogNewCustomer",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 98,
+              "id": 342,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 93,
+                  "id": 337,
                   "indexed": false,
                   "name": "_customerId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 99,
-                  "src": "1367:16:0",
+                  "scope": 343,
+                  "src": "1367:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1253,10 +1253,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 92,
+                    "id": 336,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1367:4:0",
+                    "src": "1367:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1267,12 +1267,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 95,
+                  "id": 339,
                   "indexed": false,
                   "name": "_customer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 99,
-                  "src": "1392:17:0",
+                  "scope": 343,
+                  "src": "1392:17:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1280,10 +1280,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 94,
+                    "id": 338,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1392:7:0",
+                    "src": "1392:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1294,27 +1294,27 @@
                 },
                 {
                   "constant": false,
-                  "id": 97,
+                  "id": 341,
                   "indexed": false,
                   "name": "_customerType",
                   "nodeType": "VariableDeclaration",
-                  "scope": 99,
-                  "src": "1418:26:0",
+                  "scope": 343,
+                  "src": "1418:26:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_CustomerType_$21",
+                    "typeIdentifier": "t_enum$_CustomerType_$265",
                     "typeString": "enum KarmaConstants.CustomerType"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 96,
+                    "id": 340,
                     "name": "CustomerType",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 21,
-                    "src": "1418:12:0",
+                    "referencedDeclaration": 265,
+                    "src": "1418:12:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_CustomerType_$21",
+                      "typeIdentifier": "t_enum$_CustomerType_$265",
                       "typeString": "enum KarmaConstants.CustomerType"
                     }
                   },
@@ -1322,29 +1322,29 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1358:92:0"
+              "src": "1358:92:1"
             },
-            "src": "1338:113:0"
+            "src": "1338:113:1"
           }
         ],
-        "scope": 101,
-        "src": "26:1427:0"
+        "scope": 345,
+        "src": "26:1427:1"
       }
     ],
-    "src": "0:1454:0"
+    "src": "0:1454:1"
   },
   "legacyAST": {
     "absolutePath": "/home/speak2ravi/Documents/develop/karmaBlockChain/contracts/KarmaConstants.sol",
     "exportedSymbols": {
       "KarmaConstants": [
-        100
+        344
       ]
     },
-    "id": 101,
+    "id": 345,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1,
+        "id": 245,
         "literals": [
           "solidity",
           "^",
@@ -1352,7 +1352,7 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:0"
+        "src": "0:24:1"
       },
       {
         "baseContracts": [],
@@ -1360,163 +1360,163 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 100,
+        "id": 344,
         "linearizedBaseContracts": [
-          100
+          344
         ],
         "name": "KarmaConstants",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "KarmaConstants.Currency",
-            "id": 7,
+            "id": 251,
             "members": [
               {
-                "id": 2,
+                "id": 246,
                 "name": "GBP",
                 "nodeType": "EnumValue",
-                "src": "80:3:0"
+                "src": "80:3:1"
               },
               {
-                "id": 3,
+                "id": 247,
                 "name": "CAD",
                 "nodeType": "EnumValue",
-                "src": "93:3:0"
+                "src": "93:3:1"
               },
               {
-                "id": 4,
+                "id": 248,
                 "name": "EUR",
                 "nodeType": "EnumValue",
-                "src": "106:3:0"
+                "src": "106:3:1"
               },
               {
-                "id": 5,
+                "id": 249,
                 "name": "USD",
                 "nodeType": "EnumValue",
-                "src": "119:3:0"
+                "src": "119:3:1"
               },
               {
-                "id": 6,
+                "id": 250,
                 "name": "JPY",
                 "nodeType": "EnumValue",
-                "src": "132:3:0"
+                "src": "132:3:1"
               }
             ],
             "name": "Currency",
             "nodeType": "EnumDefinition",
-            "src": "56:85:0"
+            "src": "56:85:1"
           },
           {
             "canonicalName": "KarmaConstants.Status",
-            "id": 14,
+            "id": 258,
             "members": [
               {
-                "id": 8,
+                "id": 252,
                 "name": "Apply",
                 "nodeType": "EnumValue",
-                "src": "169:5:0"
+                "src": "169:5:1"
               },
               {
-                "id": 9,
+                "id": 253,
                 "name": "Processing",
                 "nodeType": "EnumValue",
-                "src": "184:10:0"
+                "src": "184:10:1"
               },
               {
-                "id": 10,
+                "id": 254,
                 "name": "Granted",
                 "nodeType": "EnumValue",
-                "src": "204:7:0"
+                "src": "204:7:1"
               },
               {
-                "id": 11,
+                "id": 255,
                 "name": "Disbursed",
                 "nodeType": "EnumValue",
-                "src": "221:9:0"
+                "src": "221:9:1"
               },
               {
-                "id": 12,
+                "id": 256,
                 "name": "Active",
                 "nodeType": "EnumValue",
-                "src": "240:6:0"
+                "src": "240:6:1"
               },
               {
-                "id": 13,
+                "id": 257,
                 "name": "Closed",
                 "nodeType": "EnumValue",
-                "src": "256:6:0"
+                "src": "256:6:1"
               }
             ],
             "name": "Status",
             "nodeType": "EnumDefinition",
-            "src": "147:121:0"
+            "src": "147:121:1"
           },
           {
             "canonicalName": "KarmaConstants.Category",
-            "id": 18,
+            "id": 262,
             "members": [
               {
-                "id": 15,
+                "id": 259,
                 "name": "Telephone",
                 "nodeType": "EnumValue",
-                "src": "298:9:0"
+                "src": "298:9:1"
               },
               {
-                "id": 16,
+                "id": 260,
                 "name": "Grocery",
                 "nodeType": "EnumValue",
-                "src": "317:7:0"
+                "src": "317:7:1"
               },
               {
-                "id": 17,
+                "id": 261,
                 "name": "Electricity",
                 "nodeType": "EnumValue",
-                "src": "334:11:0"
+                "src": "334:11:1"
               }
             ],
             "name": "Category",
             "nodeType": "EnumDefinition",
-            "src": "274:77:0"
+            "src": "274:77:1"
           },
           {
             "canonicalName": "KarmaConstants.CustomerType",
-            "id": 21,
+            "id": 265,
             "members": [
               {
-                "id": 19,
+                "id": 263,
                 "name": "Borrower",
                 "nodeType": "EnumValue",
-                "src": "385:8:0"
+                "src": "385:8:1"
               },
               {
-                "id": 20,
+                "id": 264,
                 "name": "Investor",
                 "nodeType": "EnumValue",
-                "src": "403:8:0"
+                "src": "403:8:1"
               }
             ],
             "name": "CustomerType",
             "nodeType": "EnumDefinition",
-            "src": "357:60:0"
+            "src": "357:60:1"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 33,
+            "id": 277,
             "name": "LogLoanApplied",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 32,
+              "id": 276,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23,
+                  "id": 267,
                   "indexed": false,
                   "name": "_loanId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 33,
-                  "src": "453:12:0",
+                  "scope": 277,
+                  "src": "453:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1524,10 +1524,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 22,
+                    "id": 266,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "453:4:0",
+                    "src": "453:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1538,12 +1538,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 25,
+                  "id": 269,
                   "indexed": false,
                   "name": "_customerId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 33,
-                  "src": "475:19:0",
+                  "scope": 277,
+                  "src": "475:19:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1551,10 +1551,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 24,
+                    "id": 268,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "475:7:0",
+                    "src": "475:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1565,12 +1565,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 27,
+                  "id": 271,
                   "indexed": false,
                   "name": "_serviceProviderId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 33,
-                  "src": "504:26:0",
+                  "scope": 277,
+                  "src": "504:26:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1578,10 +1578,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 26,
+                    "id": 270,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "504:7:0",
+                    "src": "504:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1592,12 +1592,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 29,
+                  "id": 273,
                   "indexed": false,
                   "name": "principal",
                   "nodeType": "VariableDeclaration",
-                  "scope": 33,
-                  "src": "539:14:0",
+                  "scope": 277,
+                  "src": "539:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1605,10 +1605,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28,
+                    "id": 272,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "539:4:0",
+                    "src": "539:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1619,12 +1619,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 31,
+                  "id": 275,
                   "indexed": false,
                   "name": "tenure",
                   "nodeType": "VariableDeclaration",
-                  "scope": 33,
-                  "src": "562:11:0",
+                  "scope": 277,
+                  "src": "562:11:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1632,10 +1632,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 30,
+                    "id": 274,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "562:4:0",
+                    "src": "562:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1645,28 +1645,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "444:135:0"
+              "src": "444:135:1"
             },
-            "src": "424:156:0"
+            "src": "424:156:1"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 43,
+            "id": 287,
             "name": "LogLoanAccepted",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 42,
+              "id": 286,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 35,
+                  "id": 279,
                   "indexed": false,
                   "name": "_loanId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 43,
-                  "src": "616:12:0",
+                  "scope": 287,
+                  "src": "616:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1674,10 +1674,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 34,
+                    "id": 278,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "616:4:0",
+                    "src": "616:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1688,12 +1688,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 37,
+                  "id": 281,
                   "indexed": false,
                   "name": "principal",
                   "nodeType": "VariableDeclaration",
-                  "scope": 43,
-                  "src": "637:14:0",
+                  "scope": 287,
+                  "src": "637:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1701,10 +1701,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 36,
+                    "id": 280,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "637:4:0",
+                    "src": "637:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1715,12 +1715,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 39,
+                  "id": 283,
                   "indexed": false,
                   "name": "rate",
                   "nodeType": "VariableDeclaration",
-                  "scope": 43,
-                  "src": "660:9:0",
+                  "scope": 287,
+                  "src": "660:9:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1728,10 +1728,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 38,
+                    "id": 282,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "660:4:0",
+                    "src": "660:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1742,12 +1742,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 41,
+                  "id": 285,
                   "indexed": false,
                   "name": "tenure",
                   "nodeType": "VariableDeclaration",
-                  "scope": 43,
-                  "src": "678:11:0",
+                  "scope": 287,
+                  "src": "678:11:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1755,10 +1755,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 40,
+                    "id": 284,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "678:4:0",
+                    "src": "678:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1768,28 +1768,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "607:88:0"
+              "src": "607:88:1"
             },
-            "src": "586:110:0"
+            "src": "586:110:1"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 49,
+            "id": 293,
             "name": "LogLoanDisbursed",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 48,
+              "id": 292,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 45,
+                  "id": 289,
                   "indexed": false,
                   "name": "_loanId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 49,
-                  "src": "733:12:0",
+                  "scope": 293,
+                  "src": "733:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1797,10 +1797,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 44,
+                    "id": 288,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "733:4:0",
+                    "src": "733:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1811,12 +1811,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 47,
+                  "id": 291,
                   "indexed": false,
                   "name": "principal",
                   "nodeType": "VariableDeclaration",
-                  "scope": 49,
-                  "src": "754:14:0",
+                  "scope": 293,
+                  "src": "754:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1824,10 +1824,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 46,
+                    "id": 290,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "754:4:0",
+                    "src": "754:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1837,28 +1837,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "724:50:0"
+              "src": "724:50:1"
             },
-            "src": "702:73:0"
+            "src": "702:73:1"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 53,
+            "id": 297,
             "name": "LogLoanRepaid",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 52,
+              "id": 296,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 51,
+                  "id": 295,
                   "indexed": false,
                   "name": "_loanId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 53,
-                  "src": "810:12:0",
+                  "scope": 297,
+                  "src": "810:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1866,10 +1866,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 50,
+                    "id": 294,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "810:4:0",
+                    "src": "810:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1879,28 +1879,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "801:27:0"
+              "src": "801:27:1"
             },
-            "src": "781:48:0"
+            "src": "781:48:1"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 59,
+            "id": 303,
             "name": "LogLoanDeclined",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 58,
+              "id": 302,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 55,
+                  "id": 299,
                   "indexed": false,
                   "name": "_loanId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 59,
-                  "src": "866:12:0",
+                  "scope": 303,
+                  "src": "866:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1908,10 +1908,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 54,
+                    "id": 298,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "866:4:0",
+                    "src": "866:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1922,12 +1922,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 57,
+                  "id": 301,
                   "indexed": false,
                   "name": "reason",
                   "nodeType": "VariableDeclaration",
-                  "scope": 59,
-                  "src": "887:14:0",
+                  "scope": 303,
+                  "src": "887:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1935,10 +1935,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 56,
+                    "id": 300,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "887:7:0",
+                    "src": "887:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1948,28 +1948,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "857:50:0"
+              "src": "857:50:1"
             },
-            "src": "835:73:0"
+            "src": "835:73:1"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 65,
+            "id": 309,
             "name": "LogSendFail",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 64,
+              "id": 308,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 61,
+                  "id": 305,
                   "indexed": false,
                   "name": "_loanId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 65,
-                  "src": "940:12:0",
+                  "scope": 309,
+                  "src": "940:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1977,10 +1977,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 60,
+                    "id": 304,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "940:4:0",
+                    "src": "940:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1991,12 +1991,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 63,
+                  "id": 307,
                   "indexed": false,
                   "name": "strReason",
                   "nodeType": "VariableDeclaration",
-                  "scope": 65,
-                  "src": "961:17:0",
+                  "scope": 309,
+                  "src": "961:17:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2004,10 +2004,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 62,
+                    "id": 306,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "961:7:0",
+                    "src": "961:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -2017,28 +2017,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "931:53:0"
+              "src": "931:53:1"
             },
-            "src": "914:71:0"
+            "src": "914:71:1"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 73,
+            "id": 317,
             "name": "LogSendFunds",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 72,
+              "id": 316,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 67,
+                  "id": 311,
                   "indexed": false,
                   "name": "_recipient",
                   "nodeType": "VariableDeclaration",
-                  "scope": 73,
-                  "src": "1018:18:0",
+                  "scope": 317,
+                  "src": "1018:18:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2046,10 +2046,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 66,
+                    "id": 310,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1018:7:0",
+                    "src": "1018:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2060,12 +2060,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 69,
+                  "id": 313,
                   "indexed": false,
                   "name": "_from",
                   "nodeType": "VariableDeclaration",
-                  "scope": 73,
-                  "src": "1045:10:0",
+                  "scope": 317,
+                  "src": "1045:10:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2073,10 +2073,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 68,
+                    "id": 312,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1045:4:0",
+                    "src": "1045:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2087,12 +2087,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 71,
+                  "id": 315,
                   "indexed": false,
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 73,
-                  "src": "1064:11:0",
+                  "scope": 317,
+                  "src": "1064:11:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2100,10 +2100,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 70,
+                    "id": 314,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1064:4:0",
+                    "src": "1064:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2113,28 +2113,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1009:72:0"
+              "src": "1009:72:1"
             },
-            "src": "991:91:0"
+            "src": "991:91:1"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 81,
+            "id": 325,
             "name": "LogReceivedFunds",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 80,
+              "id": 324,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 75,
+                  "id": 319,
                   "indexed": false,
                   "name": "_sender",
                   "nodeType": "VariableDeclaration",
-                  "scope": 81,
-                  "src": "1119:15:0",
+                  "scope": 325,
+                  "src": "1119:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2142,10 +2142,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 74,
+                    "id": 318,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1119:7:0",
+                    "src": "1119:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2156,12 +2156,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 77,
+                  "id": 321,
                   "indexed": false,
                   "name": "_to",
                   "nodeType": "VariableDeclaration",
-                  "scope": 81,
-                  "src": "1143:8:0",
+                  "scope": 325,
+                  "src": "1143:8:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2169,10 +2169,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 76,
+                    "id": 320,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1143:4:0",
+                    "src": "1143:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2183,12 +2183,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 79,
+                  "id": 323,
                   "indexed": false,
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 81,
-                  "src": "1160:11:0",
+                  "scope": 325,
+                  "src": "1160:11:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2196,10 +2196,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 78,
+                    "id": 322,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1160:4:0",
+                    "src": "1160:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2209,28 +2209,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1110:67:0"
+              "src": "1110:67:1"
             },
-            "src": "1088:90:0"
+            "src": "1088:90:1"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 91,
+            "id": 335,
             "name": "LogNewServiceProvider",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 90,
+              "id": 334,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 83,
+                  "id": 327,
                   "indexed": false,
                   "name": "_serviceProviderId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 91,
-                  "src": "1220:23:0",
+                  "scope": 335,
+                  "src": "1220:23:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2238,10 +2238,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 82,
+                    "id": 326,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1220:4:0",
+                    "src": "1220:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2252,12 +2252,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 85,
+                  "id": 329,
                   "indexed": false,
                   "name": "_serviceProvider",
                   "nodeType": "VariableDeclaration",
-                  "scope": 91,
-                  "src": "1252:24:0",
+                  "scope": 335,
+                  "src": "1252:24:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2265,10 +2265,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 84,
+                    "id": 328,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1252:7:0",
+                    "src": "1252:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2279,12 +2279,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 87,
+                  "id": 331,
                   "indexed": false,
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 91,
-                  "src": "1285:13:0",
+                  "scope": 335,
+                  "src": "1285:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2292,10 +2292,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 86,
+                    "id": 330,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1285:7:0",
+                    "src": "1285:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -2306,27 +2306,27 @@
                 },
                 {
                   "constant": false,
-                  "id": 89,
+                  "id": 333,
                   "indexed": false,
                   "name": "_category",
                   "nodeType": "VariableDeclaration",
-                  "scope": 91,
-                  "src": "1307:18:0",
+                  "scope": 335,
+                  "src": "1307:18:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_Category_$18",
+                    "typeIdentifier": "t_enum$_Category_$262",
                     "typeString": "enum KarmaConstants.Category"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 88,
+                    "id": 332,
                     "name": "Category",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 18,
-                    "src": "1307:8:0",
+                    "referencedDeclaration": 262,
+                    "src": "1307:8:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_Category_$18",
+                      "typeIdentifier": "t_enum$_Category_$262",
                       "typeString": "enum KarmaConstants.Category"
                     }
                   },
@@ -2334,28 +2334,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1211:120:0"
+              "src": "1211:120:1"
             },
-            "src": "1184:148:0"
+            "src": "1184:148:1"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 99,
+            "id": 343,
             "name": "LogNewCustomer",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 98,
+              "id": 342,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 93,
+                  "id": 337,
                   "indexed": false,
                   "name": "_customerId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 99,
-                  "src": "1367:16:0",
+                  "scope": 343,
+                  "src": "1367:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2363,10 +2363,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 92,
+                    "id": 336,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1367:4:0",
+                    "src": "1367:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2377,12 +2377,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 95,
+                  "id": 339,
                   "indexed": false,
                   "name": "_customer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 99,
-                  "src": "1392:17:0",
+                  "scope": 343,
+                  "src": "1392:17:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2390,10 +2390,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 94,
+                    "id": 338,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1392:7:0",
+                    "src": "1392:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2404,27 +2404,27 @@
                 },
                 {
                   "constant": false,
-                  "id": 97,
+                  "id": 341,
                   "indexed": false,
                   "name": "_customerType",
                   "nodeType": "VariableDeclaration",
-                  "scope": 99,
-                  "src": "1418:26:0",
+                  "scope": 343,
+                  "src": "1418:26:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_CustomerType_$21",
+                    "typeIdentifier": "t_enum$_CustomerType_$265",
                     "typeString": "enum KarmaConstants.CustomerType"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 96,
+                    "id": 340,
                     "name": "CustomerType",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 21,
-                    "src": "1418:12:0",
+                    "referencedDeclaration": 265,
+                    "src": "1418:12:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_CustomerType_$21",
+                      "typeIdentifier": "t_enum$_CustomerType_$265",
                       "typeString": "enum KarmaConstants.CustomerType"
                     }
                   },
@@ -2432,16 +2432,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1358:92:0"
+              "src": "1358:92:1"
             },
-            "src": "1338:113:0"
+            "src": "1338:113:1"
           }
         ],
-        "scope": 101,
-        "src": "26:1427:0"
+        "scope": 345,
+        "src": "26:1427:1"
       }
     ],
-    "src": "0:1454:0"
+    "src": "0:1454:1"
   },
   "compiler": {
     "name": "solc",
@@ -2449,5 +2449,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-11-05T13:44:08.981Z"
+  "updatedAt": "2018-11-06T10:33:48.532Z"
 }

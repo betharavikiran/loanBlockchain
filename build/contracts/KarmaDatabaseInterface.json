@@ -221,7 +221,7 @@
       "inputs": [
         {
           "name": "_customerExternalId",
-          "type": "bytes32"
+          "type": "string"
         },
         {
           "name": "_customerType",
@@ -294,7 +294,7 @@
           "type": "bytes32"
         },
         {
-          "name": "_serviceProviderId",
+          "name": "_serviceProviderExternalId",
           "type": "bytes32"
         }
       ],
@@ -314,20 +314,20 @@
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.4.24;\n\nimport \"./KarmaDatabaseModel.sol\";\nimport \"./KarmaConstants.sol\";\n\ncontract KarmaDatabaseInterface is KarmaDatabaseModel {\n   function createCustomer(bytes32 _customerExternalId, CustomerType _customerType) external returns (uint _customerId);\n   function createServiceProvider(bytes32 _serviceProviderExternalId, address _providerAddress, bytes32 _name, Category _category) external returns (uint _serviceProviderId);\n   function createLoan(uint _principal, uint _tenure, Currency _currency, Category _category, bytes32 _customerExternalId, bytes32 _serviceProviderId) external returns (uint _loanId);\n}\n",
+  "source": "pragma solidity ^0.4.24;\n\nimport \"./KarmaDatabaseModel.sol\";\nimport \"./KarmaConstants.sol\";\n\ncontract KarmaDatabaseInterface is KarmaDatabaseModel {\n   function createCustomer(string _customerExternalId, CustomerType _customerType) external returns (uint _customerId);\n   function createServiceProvider(bytes32 _serviceProviderExternalId, address _providerAddress, bytes32 _name, Category _category) external returns (uint _serviceProviderId);\n   function createLoan(uint _principal, uint _tenure, Currency _currency, Category _category, bytes32 _customerExternalId, bytes32 _serviceProviderExternalId) external returns (uint _loanId);\n}\n",
   "sourcePath": "/home/speak2ravi/Documents/develop/karmaBlockChain/contracts/KarmaDatabaseInterface.sol",
   "ast": {
     "absolutePath": "/home/speak2ravi/Documents/develop/karmaBlockChain/contracts/KarmaDatabaseInterface.sol",
     "exportedSymbols": {
       "KarmaDatabaseInterface": [
-        420
+        663
       ]
     },
-    "id": 421,
+    "id": 664,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 376,
+        "id": 619,
         "literals": [
           "solidity",
           "^",
@@ -335,27 +335,27 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:2"
+        "src": "0:24:3"
       },
       {
         "absolutePath": "/home/speak2ravi/Documents/develop/karmaBlockChain/contracts/KarmaDatabaseModel.sol",
         "file": "./KarmaDatabaseModel.sol",
-        "id": 377,
+        "id": 620,
         "nodeType": "ImportDirective",
-        "scope": 421,
-        "sourceUnit": 472,
-        "src": "26:34:2",
+        "scope": 664,
+        "sourceUnit": 715,
+        "src": "26:34:3",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "/home/speak2ravi/Documents/develop/karmaBlockChain/contracts/KarmaConstants.sol",
         "file": "./KarmaConstants.sol",
-        "id": 378,
+        "id": 621,
         "nodeType": "ImportDirective",
-        "scope": 421,
-        "sourceUnit": 101,
-        "src": "61:30:2",
+        "scope": 664,
+        "sourceUnit": 345,
+        "src": "61:30:3",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -365,33 +365,33 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 379,
+              "id": 622,
               "name": "KarmaDatabaseModel",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 471,
-              "src": "128:18:2",
+              "referencedDeclaration": 714,
+              "src": "128:18:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_KarmaDatabaseModel_$471",
+                "typeIdentifier": "t_contract$_KarmaDatabaseModel_$714",
                 "typeString": "contract KarmaDatabaseModel"
               }
             },
-            "id": 380,
+            "id": 623,
             "nodeType": "InheritanceSpecifier",
-            "src": "128:18:2"
+            "src": "128:18:3"
           }
         ],
         "contractDependencies": [
-          100,
-          471
+          344,
+          714
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 420,
+        "id": 663,
         "linearizedBaseContracts": [
-          420,
-          471,
-          100
+          663,
+          714,
+          344
         ],
         "name": "KarmaDatabaseInterface",
         "nodeType": "ContractDefinition",
@@ -399,7 +399,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 389,
+            "id": 632,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -407,30 +407,30 @@
             "name": "createCustomer",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 385,
+              "id": 628,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 382,
+                  "id": 625,
                   "name": "_customerExternalId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 389,
-                  "src": "176:27:2",
+                  "scope": 632,
+                  "src": "176:26:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
                   },
                   "typeName": {
-                    "id": 381,
-                    "name": "bytes32",
+                    "id": 624,
+                    "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "176:7:2",
+                    "src": "176:6:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
                     }
                   },
                   "value": null,
@@ -438,26 +438,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 384,
+                  "id": 627,
                   "name": "_customerType",
                   "nodeType": "VariableDeclaration",
-                  "scope": 389,
-                  "src": "205:26:2",
+                  "scope": 632,
+                  "src": "204:26:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_CustomerType_$21",
+                    "typeIdentifier": "t_enum$_CustomerType_$265",
                     "typeString": "enum KarmaConstants.CustomerType"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 383,
+                    "id": 626,
                     "name": "CustomerType",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 21,
-                    "src": "205:12:2",
+                    "referencedDeclaration": 265,
+                    "src": "204:12:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_CustomerType_$21",
+                      "typeIdentifier": "t_enum$_CustomerType_$265",
                       "typeString": "enum KarmaConstants.CustomerType"
                     }
                   },
@@ -465,20 +465,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "175:57:2"
+              "src": "175:56:3"
             },
             "payable": false,
             "returnParameters": {
-              "id": 388,
+              "id": 631,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 387,
+                  "id": 630,
                   "name": "_customerId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 389,
-                  "src": "251:16:2",
+                  "scope": 632,
+                  "src": "250:16:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -486,10 +486,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 386,
+                    "id": 629,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "251:4:2",
+                    "src": "250:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -499,10 +499,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "250:18:2"
+              "src": "249:18:3"
             },
-            "scope": 420,
-            "src": "152:117:2",
+            "scope": 663,
+            "src": "152:116:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -510,7 +510,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 402,
+            "id": 645,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -518,16 +518,16 @@
             "name": "createServiceProvider",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 398,
+              "id": 641,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 391,
+                  "id": 634,
                   "name": "_serviceProviderExternalId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 402,
-                  "src": "304:34:2",
+                  "scope": 645,
+                  "src": "303:34:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -535,10 +535,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 390,
+                    "id": 633,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "304:7:2",
+                    "src": "303:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -549,11 +549,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 393,
+                  "id": 636,
                   "name": "_providerAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 402,
-                  "src": "340:24:2",
+                  "scope": 645,
+                  "src": "339:24:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -561,10 +561,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 392,
+                    "id": 635,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "340:7:2",
+                    "src": "339:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -575,11 +575,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 395,
+                  "id": 638,
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 402,
-                  "src": "366:13:2",
+                  "scope": 645,
+                  "src": "365:13:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -587,10 +587,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 394,
+                    "id": 637,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "366:7:2",
+                    "src": "365:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -601,26 +601,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 397,
+                  "id": 640,
                   "name": "_category",
                   "nodeType": "VariableDeclaration",
-                  "scope": 402,
-                  "src": "381:18:2",
+                  "scope": 645,
+                  "src": "380:18:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_Category_$18",
+                    "typeIdentifier": "t_enum$_Category_$262",
                     "typeString": "enum KarmaConstants.Category"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 396,
+                    "id": 639,
                     "name": "Category",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 18,
-                    "src": "381:8:2",
+                    "referencedDeclaration": 262,
+                    "src": "380:8:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_Category_$18",
+                      "typeIdentifier": "t_enum$_Category_$262",
                       "typeString": "enum KarmaConstants.Category"
                     }
                   },
@@ -628,20 +628,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "303:97:2"
+              "src": "302:97:3"
             },
             "payable": false,
             "returnParameters": {
-              "id": 401,
+              "id": 644,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 400,
+                  "id": 643,
                   "name": "_serviceProviderId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 402,
-                  "src": "419:23:2",
+                  "scope": 645,
+                  "src": "418:23:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -649,10 +649,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 399,
+                    "id": 642,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "419:4:2",
+                    "src": "418:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -662,10 +662,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "418:25:2"
+              "src": "417:25:3"
             },
-            "scope": 420,
-            "src": "273:171:2",
+            "scope": 663,
+            "src": "272:171:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -673,7 +673,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 419,
+            "id": 662,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -681,16 +681,16 @@
             "name": "createLoan",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 415,
+              "id": 658,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 404,
+                  "id": 647,
                   "name": "_principal",
                   "nodeType": "VariableDeclaration",
-                  "scope": 419,
-                  "src": "468:15:2",
+                  "scope": 662,
+                  "src": "467:15:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -698,10 +698,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 403,
+                    "id": 646,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "468:4:2",
+                    "src": "467:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -712,11 +712,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 406,
+                  "id": 649,
                   "name": "_tenure",
                   "nodeType": "VariableDeclaration",
-                  "scope": 419,
-                  "src": "485:12:2",
+                  "scope": 662,
+                  "src": "484:12:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -724,10 +724,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 405,
+                    "id": 648,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "485:4:2",
+                    "src": "484:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -738,26 +738,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 408,
+                  "id": 651,
                   "name": "_currency",
                   "nodeType": "VariableDeclaration",
-                  "scope": 419,
-                  "src": "499:18:2",
+                  "scope": 662,
+                  "src": "498:18:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_Currency_$7",
+                    "typeIdentifier": "t_enum$_Currency_$251",
                     "typeString": "enum KarmaConstants.Currency"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 407,
+                    "id": 650,
                     "name": "Currency",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 7,
-                    "src": "499:8:2",
+                    "referencedDeclaration": 251,
+                    "src": "498:8:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_Currency_$7",
+                      "typeIdentifier": "t_enum$_Currency_$251",
                       "typeString": "enum KarmaConstants.Currency"
                     }
                   },
@@ -766,26 +766,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 410,
+                  "id": 653,
                   "name": "_category",
                   "nodeType": "VariableDeclaration",
-                  "scope": 419,
-                  "src": "519:18:2",
+                  "scope": 662,
+                  "src": "518:18:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_Category_$18",
+                    "typeIdentifier": "t_enum$_Category_$262",
                     "typeString": "enum KarmaConstants.Category"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 409,
+                    "id": 652,
                     "name": "Category",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 18,
-                    "src": "519:8:2",
+                    "referencedDeclaration": 262,
+                    "src": "518:8:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_Category_$18",
+                      "typeIdentifier": "t_enum$_Category_$262",
                       "typeString": "enum KarmaConstants.Category"
                     }
                   },
@@ -794,11 +794,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 412,
+                  "id": 655,
                   "name": "_customerExternalId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 419,
-                  "src": "539:27:2",
+                  "scope": 662,
+                  "src": "538:27:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -806,10 +806,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 411,
+                    "id": 654,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "539:7:2",
+                    "src": "538:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -820,11 +820,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 414,
-                  "name": "_serviceProviderId",
+                  "id": 657,
+                  "name": "_serviceProviderExternalId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 419,
-                  "src": "568:26:2",
+                  "scope": 662,
+                  "src": "567:34:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -832,10 +832,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 413,
+                    "id": 656,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "568:7:2",
+                    "src": "567:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -845,20 +845,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "467:128:2"
+              "src": "466:136:3"
             },
             "payable": false,
             "returnParameters": {
-              "id": 418,
+              "id": 661,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 417,
+                  "id": 660,
                   "name": "_loanId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 419,
-                  "src": "614:12:2",
+                  "scope": 662,
+                  "src": "621:12:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -866,10 +866,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 416,
+                    "id": 659,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "614:4:2",
+                    "src": "621:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -879,33 +879,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "613:14:2"
+              "src": "620:14:3"
             },
-            "scope": 420,
-            "src": "448:180:2",
+            "scope": 663,
+            "src": "447:188:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 421,
-        "src": "93:537:2"
+        "scope": 664,
+        "src": "93:544:3"
       }
     ],
-    "src": "0:631:2"
+    "src": "0:638:3"
   },
   "legacyAST": {
     "absolutePath": "/home/speak2ravi/Documents/develop/karmaBlockChain/contracts/KarmaDatabaseInterface.sol",
     "exportedSymbols": {
       "KarmaDatabaseInterface": [
-        420
+        663
       ]
     },
-    "id": 421,
+    "id": 664,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 376,
+        "id": 619,
         "literals": [
           "solidity",
           "^",
@@ -913,27 +913,27 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:2"
+        "src": "0:24:3"
       },
       {
         "absolutePath": "/home/speak2ravi/Documents/develop/karmaBlockChain/contracts/KarmaDatabaseModel.sol",
         "file": "./KarmaDatabaseModel.sol",
-        "id": 377,
+        "id": 620,
         "nodeType": "ImportDirective",
-        "scope": 421,
-        "sourceUnit": 472,
-        "src": "26:34:2",
+        "scope": 664,
+        "sourceUnit": 715,
+        "src": "26:34:3",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "/home/speak2ravi/Documents/develop/karmaBlockChain/contracts/KarmaConstants.sol",
         "file": "./KarmaConstants.sol",
-        "id": 378,
+        "id": 621,
         "nodeType": "ImportDirective",
-        "scope": 421,
-        "sourceUnit": 101,
-        "src": "61:30:2",
+        "scope": 664,
+        "sourceUnit": 345,
+        "src": "61:30:3",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -943,33 +943,33 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 379,
+              "id": 622,
               "name": "KarmaDatabaseModel",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 471,
-              "src": "128:18:2",
+              "referencedDeclaration": 714,
+              "src": "128:18:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_KarmaDatabaseModel_$471",
+                "typeIdentifier": "t_contract$_KarmaDatabaseModel_$714",
                 "typeString": "contract KarmaDatabaseModel"
               }
             },
-            "id": 380,
+            "id": 623,
             "nodeType": "InheritanceSpecifier",
-            "src": "128:18:2"
+            "src": "128:18:3"
           }
         ],
         "contractDependencies": [
-          100,
-          471
+          344,
+          714
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 420,
+        "id": 663,
         "linearizedBaseContracts": [
-          420,
-          471,
-          100
+          663,
+          714,
+          344
         ],
         "name": "KarmaDatabaseInterface",
         "nodeType": "ContractDefinition",
@@ -977,7 +977,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 389,
+            "id": 632,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -985,30 +985,30 @@
             "name": "createCustomer",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 385,
+              "id": 628,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 382,
+                  "id": 625,
                   "name": "_customerExternalId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 389,
-                  "src": "176:27:2",
+                  "scope": 632,
+                  "src": "176:26:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
                   },
                   "typeName": {
-                    "id": 381,
-                    "name": "bytes32",
+                    "id": 624,
+                    "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "176:7:2",
+                    "src": "176:6:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
                     }
                   },
                   "value": null,
@@ -1016,26 +1016,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 384,
+                  "id": 627,
                   "name": "_customerType",
                   "nodeType": "VariableDeclaration",
-                  "scope": 389,
-                  "src": "205:26:2",
+                  "scope": 632,
+                  "src": "204:26:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_CustomerType_$21",
+                    "typeIdentifier": "t_enum$_CustomerType_$265",
                     "typeString": "enum KarmaConstants.CustomerType"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 383,
+                    "id": 626,
                     "name": "CustomerType",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 21,
-                    "src": "205:12:2",
+                    "referencedDeclaration": 265,
+                    "src": "204:12:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_CustomerType_$21",
+                      "typeIdentifier": "t_enum$_CustomerType_$265",
                       "typeString": "enum KarmaConstants.CustomerType"
                     }
                   },
@@ -1043,20 +1043,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "175:57:2"
+              "src": "175:56:3"
             },
             "payable": false,
             "returnParameters": {
-              "id": 388,
+              "id": 631,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 387,
+                  "id": 630,
                   "name": "_customerId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 389,
-                  "src": "251:16:2",
+                  "scope": 632,
+                  "src": "250:16:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1064,10 +1064,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 386,
+                    "id": 629,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "251:4:2",
+                    "src": "250:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1077,10 +1077,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "250:18:2"
+              "src": "249:18:3"
             },
-            "scope": 420,
-            "src": "152:117:2",
+            "scope": 663,
+            "src": "152:116:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -1088,7 +1088,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 402,
+            "id": 645,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1096,16 +1096,16 @@
             "name": "createServiceProvider",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 398,
+              "id": 641,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 391,
+                  "id": 634,
                   "name": "_serviceProviderExternalId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 402,
-                  "src": "304:34:2",
+                  "scope": 645,
+                  "src": "303:34:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1113,10 +1113,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 390,
+                    "id": 633,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "304:7:2",
+                    "src": "303:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1127,11 +1127,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 393,
+                  "id": 636,
                   "name": "_providerAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 402,
-                  "src": "340:24:2",
+                  "scope": 645,
+                  "src": "339:24:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1139,10 +1139,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 392,
+                    "id": 635,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "340:7:2",
+                    "src": "339:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1153,11 +1153,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 395,
+                  "id": 638,
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 402,
-                  "src": "366:13:2",
+                  "scope": 645,
+                  "src": "365:13:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1165,10 +1165,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 394,
+                    "id": 637,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "366:7:2",
+                    "src": "365:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1179,26 +1179,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 397,
+                  "id": 640,
                   "name": "_category",
                   "nodeType": "VariableDeclaration",
-                  "scope": 402,
-                  "src": "381:18:2",
+                  "scope": 645,
+                  "src": "380:18:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_Category_$18",
+                    "typeIdentifier": "t_enum$_Category_$262",
                     "typeString": "enum KarmaConstants.Category"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 396,
+                    "id": 639,
                     "name": "Category",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 18,
-                    "src": "381:8:2",
+                    "referencedDeclaration": 262,
+                    "src": "380:8:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_Category_$18",
+                      "typeIdentifier": "t_enum$_Category_$262",
                       "typeString": "enum KarmaConstants.Category"
                     }
                   },
@@ -1206,20 +1206,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "303:97:2"
+              "src": "302:97:3"
             },
             "payable": false,
             "returnParameters": {
-              "id": 401,
+              "id": 644,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 400,
+                  "id": 643,
                   "name": "_serviceProviderId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 402,
-                  "src": "419:23:2",
+                  "scope": 645,
+                  "src": "418:23:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1227,10 +1227,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 399,
+                    "id": 642,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "419:4:2",
+                    "src": "418:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1240,10 +1240,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "418:25:2"
+              "src": "417:25:3"
             },
-            "scope": 420,
-            "src": "273:171:2",
+            "scope": 663,
+            "src": "272:171:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -1251,7 +1251,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 419,
+            "id": 662,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1259,16 +1259,16 @@
             "name": "createLoan",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 415,
+              "id": 658,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 404,
+                  "id": 647,
                   "name": "_principal",
                   "nodeType": "VariableDeclaration",
-                  "scope": 419,
-                  "src": "468:15:2",
+                  "scope": 662,
+                  "src": "467:15:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1276,10 +1276,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 403,
+                    "id": 646,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "468:4:2",
+                    "src": "467:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1290,11 +1290,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 406,
+                  "id": 649,
                   "name": "_tenure",
                   "nodeType": "VariableDeclaration",
-                  "scope": 419,
-                  "src": "485:12:2",
+                  "scope": 662,
+                  "src": "484:12:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1302,10 +1302,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 405,
+                    "id": 648,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "485:4:2",
+                    "src": "484:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1316,26 +1316,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 408,
+                  "id": 651,
                   "name": "_currency",
                   "nodeType": "VariableDeclaration",
-                  "scope": 419,
-                  "src": "499:18:2",
+                  "scope": 662,
+                  "src": "498:18:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_Currency_$7",
+                    "typeIdentifier": "t_enum$_Currency_$251",
                     "typeString": "enum KarmaConstants.Currency"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 407,
+                    "id": 650,
                     "name": "Currency",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 7,
-                    "src": "499:8:2",
+                    "referencedDeclaration": 251,
+                    "src": "498:8:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_Currency_$7",
+                      "typeIdentifier": "t_enum$_Currency_$251",
                       "typeString": "enum KarmaConstants.Currency"
                     }
                   },
@@ -1344,26 +1344,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 410,
+                  "id": 653,
                   "name": "_category",
                   "nodeType": "VariableDeclaration",
-                  "scope": 419,
-                  "src": "519:18:2",
+                  "scope": 662,
+                  "src": "518:18:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_Category_$18",
+                    "typeIdentifier": "t_enum$_Category_$262",
                     "typeString": "enum KarmaConstants.Category"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 409,
+                    "id": 652,
                     "name": "Category",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 18,
-                    "src": "519:8:2",
+                    "referencedDeclaration": 262,
+                    "src": "518:8:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_Category_$18",
+                      "typeIdentifier": "t_enum$_Category_$262",
                       "typeString": "enum KarmaConstants.Category"
                     }
                   },
@@ -1372,11 +1372,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 412,
+                  "id": 655,
                   "name": "_customerExternalId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 419,
-                  "src": "539:27:2",
+                  "scope": 662,
+                  "src": "538:27:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1384,10 +1384,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 411,
+                    "id": 654,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "539:7:2",
+                    "src": "538:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1398,11 +1398,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 414,
-                  "name": "_serviceProviderId",
+                  "id": 657,
+                  "name": "_serviceProviderExternalId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 419,
-                  "src": "568:26:2",
+                  "scope": 662,
+                  "src": "567:34:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1410,10 +1410,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 413,
+                    "id": 656,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "568:7:2",
+                    "src": "567:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1423,20 +1423,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "467:128:2"
+              "src": "466:136:3"
             },
             "payable": false,
             "returnParameters": {
-              "id": 418,
+              "id": 661,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 417,
+                  "id": 660,
                   "name": "_loanId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 419,
-                  "src": "614:12:2",
+                  "scope": 662,
+                  "src": "621:12:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1444,10 +1444,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 416,
+                    "id": 659,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "614:4:2",
+                    "src": "621:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1457,20 +1457,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "613:14:2"
+              "src": "620:14:3"
             },
-            "scope": 420,
-            "src": "448:180:2",
+            "scope": 663,
+            "src": "447:188:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 421,
-        "src": "93:537:2"
+        "scope": 664,
+        "src": "93:544:3"
       }
     ],
-    "src": "0:631:2"
+    "src": "0:638:3"
   },
   "compiler": {
     "name": "solc",
@@ -1478,5 +1478,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-11-05T13:44:08.980Z"
+  "updatedAt": "2018-11-06T10:33:48.535Z"
 }
