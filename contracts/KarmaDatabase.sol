@@ -27,11 +27,11 @@ contract KarmaDatabase is KarmaDatabaseInterface, ConvertLib {
 
         customerIds[msg.sender] = _customerId;
         Customer storage c = customers[_customerId];
-        c.customerExternalId = stringToBytes32(_customerExternalId);
+        c.customerExternalId = _customerExternalId;
         c.customerType = _customerType;
         c.customerAddress = msg.sender;
 
-        customerByExternalId[stringToBytes32(_customerExternalId)] = c;
+        customerByExternalId[_customerExternalId] = c;
 
         emit LogNewCustomer(_customerId, msg.sender, _customerType);
     }
@@ -71,5 +71,40 @@ contract KarmaDatabase is KarmaDatabaseInterface, ConvertLib {
 
         // Notify new loan application
         emit LogLoanApplied(_loanId, _customerExternalId, _serviceProviderId,_principal, _tenure);
+    }
+
+    function getCustomerCount() external returns (uint _count){
+        _count = customers.length;
+    }
+
+    function getCustomerById(uint _customerId) external returns (address _customerAddress,CustomerType _customerType){
+      Customer memory c = customers[_customerId];
+      _customerAddress = c.customerAddress;
+      _customerType = c.customerType;
+    }
+
+
+    function getServiceProviderCount() external returns (uint _count){
+        _count = serviceProviders.length;
+    }
+
+    function getServiceProviderById(uint _serviceProviderId) external returns (address _providerAddress,Category _category){
+        ServiceProvider storage sp = serviceProviders[_serviceProviderId];
+        _providerAddress = sp.providerAddress;
+        _category = sp.category;
+    }
+
+    function getLoanCount() external returns (uint _count){
+        _count = loans.length;
+    }
+
+    function getLoanById(uint _loanId) external returns (address _customerAddress,uint _principal, uint _tenure, Currency _currency,Category _category){
+        Loan storage l = loans[_loanId];
+
+        _customerAddress = l.borrowerAddress;
+        _principal = l.principal;
+        _tenure = l.tenure;
+        _currency = l.currency;
+        _category = l.category;
     }
 }
